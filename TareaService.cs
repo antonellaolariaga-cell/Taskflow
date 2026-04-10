@@ -24,40 +24,5 @@ namespace Taskflow.Services
             Console.WriteLine("Tarea creada correctamente");
         }
 
-        // Listar tareas
-        public void ListarTareas(EstadoTarea? estadoFiltro = null)
-        {
-            var lista = estadoFiltro == null
-                ? tareas
-                : tareas.Where(t => t.Estado == estadoFiltro).ToList();
-
-            foreach (var t in lista)
-            {
-                Console.WriteLine($"ID: {t.Id}");
-                Console.WriteLine($"Título: {t.Titulo}");
-                Console.WriteLine($"Responsable: {t.Responsable}");
-                Console.WriteLine($"Estado: {t.Estado}");
-                Console.WriteLine($"Fecha creación: {t.FechaCreacion}");
-                Console.WriteLine($"Última modificación: {t.FechaModificacion}");
-                Console.WriteLine("---------------------------");
-            }
-        }
-
-        // Cambiar estado
-        public void CambiarEstado(int id, EstadoTarea nuevoEstado)
-        {
-            var tarea = tareas.FirstOrDefault(t => t.Id == id);
-
-            if (tarea == null)
-            {
-                Console.WriteLine("Tarea no encontrada");
-                return;
-            }
-
-            tarea.Estado = nuevoEstado;
-            tarea.FechaModificacion = DateTime.Now;
-
-            Console.WriteLine("Estado actualizado correctamente");
-        }
     }
 }
