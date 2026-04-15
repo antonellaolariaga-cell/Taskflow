@@ -43,6 +43,21 @@ namespace Taskflow.Services
             }
         }
 
-      
+        // Cambiar estado
+        public void CambiarEstado(int id, EstadoTarea nuevoEstado)
+        {
+            var tarea = tareas.FirstOrDefault(t => t.Id == id);
+
+            if (tarea == null)
+            {
+                Console.WriteLine("Tarea no encontrada");
+                return;
+            }
+
+            tarea.Estado = nuevoEstado;
+            tarea.FechaModificacion = DateTime.Now;
+
+            Console.WriteLine("Estado actualizado correctamente");
+        }
     }
 }
