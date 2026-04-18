@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 ﻿/.vs
 /obj
+=======
+<<<<<<< HEAD
+ bin/ 
+ obj/ 
+.vs/ 
+=======
+﻿/.vs
+/obj
+>>>>>>> 12757f7b751fee21d928c072966fc61881c16568
+>>>>>>> feature/crear-tarea
