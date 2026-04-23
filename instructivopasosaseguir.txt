@@ -1,0 +1,39 @@
+2. Pasos para mandarlo a revisión (GitHub)
+Para que alguien lo revise y lo apruebe, el flujo es el siguiente:
+
+Paso A: Subir tu rama a GitHub
+Asegúrate de estar en tu rama (por ejemplo, feature/clase-tarea) y súbela:
+
+Bash
+git push -u origin feature/clase-tarea
+Paso B: Crear el Pull Request (PR)
+Entra a tu repositorio en GitHub.
+
+Dale al botón verde "Compare & pull request".
+
+Configura el destino: Asegúrate de que diga base: develop (porque quieres que tu código se una a la rama de desarrollo, no a la principal main todavía).
+
+Título y descripción: Usa el título del commit. En la descripción puedes poner: "Se crea la estructura básica de la clase Tarea con sus propiedades (ID, Nombre, Estado) para iniciar el flujo del proyecto".
+
+Haz clic en "Create pull request".
+
+Paso C: La Revisión
+Tus compañeros o el líder técnico verán tu PR.
+
+Ellos pueden dejar comentarios o pedirte cambios.
+
+Si te piden un cambio: lo haces en tu PC, haces otro git add, git commit y git push. El PR se actualizará automáticamente.
+
+Paso D: La Aprobación (Approve & Merge)
+Una vez que el revisor esté feliz, verás un check verde. Él (o tú) podrá hacer clic en "Merge pull request".
+
+Resumen de la "limpieza" final
+Si ya hiciste el reset --soft y el checkout -b que hablamos antes, tus pasos ahora son:
+
+git add .
+
+git commit -m "feat: implementar modelo base Tarea.cs"
+
+git push -u origin feature/clase-tarea
+
+Ir a GitHub y abrir el Pull Request apuntando a la rama develop.
